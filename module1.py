@@ -82,22 +82,34 @@
 # n = int(input("Ingrese el número "))
 # i = 1
 # acumSuma = 0
-# while (i <= n)):
+# while (i <= n):
 #     acumSuma = acumSuma + i
 #     i = i + 2
 # print(acumSuma)
 
-n = int(input("Ingrese el número "))
-i = 1
-acumSuma = 1
-total = 0
-print(acumSuma)
-while (i < n):
-    i = i + 1
-    acumSuma = acumSuma + 2
-    print(acumSuma)
-    total = total + acumSuma
-print("El total es: ", total)
+# n = int(input("Ingrese el número "))
+# i = 1
+# acumSuma = 1
+# total = 0
+# print(acumSuma)
+# while (i < n):
+#     i = i + 1
+#     acumSuma = acumSuma + 2
+#     print(acumSuma)
+#     total = total + acumSuma
+# print("El total es: ", total)
+
+# testResults = [ True, True, True, True, False, True ]
+
+# resultado = ""
+
+# for índice in testResults:
+#     if (testResults[índice] == "False"):
+#         resultado = índice
+#         print(resultado)
+
+# print(resultado)
+
 
 
 
