@@ -24,13 +24,4 @@
 #     if (stringSinEspacios[longitudString - 1] != stringAlReves[longitudString - 1]):
 #         print("No son palíndromos")
 
-# Difícil 2:
-
-string = str(input("Ingresar una frase: "))
-vocales = "aeiou"
-índice = 0
-palabra = ""
-vocalesEnString = 0
-carácteres = 0
-# vocal = 0
 
