@@ -34,21 +34,3 @@ vocalesEnString = 0
 carácteres = 0
 # vocal = 0
 
-while (string == ""):
-    string = str(input("Ingresaste una frase vacía. Ingresar una frase: "))
-
-while (índice < len(string)):
-    while (string[índice] != " "):
-        carácteres += 1
-        for vocal in vocales:
-            if (string[índice] == vocal):
-                vocalesEnString += 1
-        palabra += string[índice]
-        índice += 1
-    print("La palabra " + str(palabra) + " tiene: " + str(carácteres) + " letras y " + str(vocalesEnString) + " vocales.")
-    print("Índice es: ", índice)
-    palabra = ""
-    vocalesEnString = 0
-    carácteres = 0
-    índice += 1
-    print("Índice después es: ", índice)
