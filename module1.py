@@ -110,22 +110,29 @@
 
 # print(resultado)
 
-exponentes = "1122"
-índiceExponentes = 0
-índiceN = 1 
-suma = 0
-n = int(input("Ingrese un número natural: "))
+# exponentes = "1122"
+# índiceExponentes = 0
+# índiceN = 1 
+# suma = 0
+# n = int(input("Ingrese un número natural: "))
 
-while (índiceExponentes < len(exponentes) and índiceN <= n):
-    exponente = exponentes[índiceExponentes]
-    índiceExponentes += 1
-    if (índiceExponentes == 3):
-        índiceExponentes = 0
-    suma += (índiceN/(2**int(exponente)))
-    índiceN += 1
-    print(suma)
-print("La suma es: ", suma)
+# while (índiceExponentes < len(exponentes) and índiceN <= n):
+#     exponente = exponentes[índiceExponentes]
+#     índiceExponentes += 1
+#     if (índiceExponentes == 3):
+#         índiceExponentes = 0
+#     suma += (índiceN/(2**int(exponente)))
+#     índiceN += 1
+#     print(suma)
+# print("La suma es: ", suma)
 
+j = 0
+i = 1
+while (i <= 21):
+    if (i % 3 == 0):
+        j = j + i
+    i = i + 1
+print(j)
 
 
 
