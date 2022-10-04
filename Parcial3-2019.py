@@ -1,7 +1,6 @@
 from random import *
 
 stringAAnalizar = input("Ingrese una palabra: ")
-stringAAnalizarSinPrimerCaracter = ""
 string0 = ""
 string1 = ""
 caracteresRepetidos0 = ""
