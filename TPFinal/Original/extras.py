@@ -2,8 +2,6 @@ import pygame
 from funcionesVACIAS import *
 from pygame.locals import *
 from configuracion import *
-import funcionesVACIAS
-import principal
 
 def dameLetraApretada(key):
     if key == K_a:
@@ -68,20 +66,10 @@ def dameLetraApretada(key):
         return("")
 
 
-pygame.init()
-defaultFont = pygame.font.Font(pygame.font.get_default_font(), TAMANNO_LETRA)
-defaultFontGrande = pygame.font.Font(pygame.font.get_default_font(), TAMANNO_LETRA_GRANDE)
-defaultFontMediana = pygame.font.Font(pygame.font.get_default_font(), TAMANNO_LETRA_MEDIANA)
-
-def pantallaInicial(screen):
-    pygame.draw.line(screen, (255,255,255), (0, ALTO-70) , (ANCHO, ALTO-70), 5)
-    #muestra lo que escribe el jugador
-    screen.blit(defaultFontMediana.render("Indique que modalidad quiere jugar", 1, COLOR_TEXTO), (20, 50))
-    screen.blit(defaultFont.render("a - Por tiempo -> Tenés que adivinar la palabra lo antes posible", 1, COLOR_TEXTO), (40, 120))
-    screen.blit(defaultFont.render("b - Temático -> Podés elegir categorías de palabras", 1, COLOR_TEXTO), (40, 180))
-    screen.blit(defaultFont.render("c - Por aciertos -> Tenés que adivinar la mayor cantidad de palabras", 1, COLOR_TEXTO), (40, 240))
-
-def dibujar(screen, listaDePalabrasUsuario, palabraUsuario, puntos, segundos, gano, correctas, incorrectas, casi, palabraCorrecta, valorInstancia):
+def dibujar(screen, listaDePalabrasUsuario, palabraUsuario, puntos, segundos, gano,
+                correctas, incorrectas, casi):
+    defaultFont= pygame.font.Font( pygame.font.get_default_font(), TAMANNO_LETRA)
+    defaultFontGrande= pygame.font.Font( pygame.font.get_default_font(), TAMANNO_LETRA_GRANDE)
 
     #Linea Horizontal
     pygame.draw.line(screen, (255,255,255), (0, ALTO-70) , (ANCHO, ALTO-70), 5)
@@ -90,10 +78,8 @@ def dibujar(screen, listaDePalabrasUsuario, palabraUsuario, puntos, segundos, ga
     screen.blit(defaultFont.render(palabraUsuario, 1, COLOR_TEXTO), (190, 570))
     #muestra el puntaje
     screen.blit(defaultFont.render("Puntos: " + str(puntos), 1, COLOR_TEXTO), (680, 10))
-    #muestra la longitud de la palabra
-    screen.blit(defaultFont.render("La palabra tiene " + str(len(palabraCorrecta)) + " letras", 1, COLOR_TEXTO), (300, 10)) #Agregado
     #muestra los segundos y puede cambiar de color con el tiempo
-    if (segundos < 15):
+    if(segundos < 15):
         ren = defaultFont.render("Tiempo: " + str(int(segundos)), 1, COLOR_TIEMPO_FINAL)
     else:
         ren = defaultFont.render("Tiempo: " + str(int(segundos)), 1, COLOR_TEXTO)
@@ -105,9 +91,9 @@ def dibujar(screen, listaDePalabrasUsuario, palabraUsuario, puntos, segundos, ga
         screen.blit(defaultFontGrande.render(palabra, 1, COLOR_LETRAS), (ANCHO//2-len(palabra)*TAMANNO_LETRA_GRANDE//4,20 + 80 * pos))
         pos += 1
 
-    #muestra el abecedario, falta ponerle color a las letras
+    #muestra el abcdario, falta ponerle color a las letras
     abcdario = ["qwertyuiop", "asdfghjklm", "zxcvbnm"]
-    y = 0
+    y=0
     for abc in abcdario:
         x = 0
         for letra in abc:
@@ -115,6 +101,8 @@ def dibujar(screen, listaDePalabrasUsuario, palabraUsuario, puntos, segundos, ga
             screen.blit(defaultFont.render(letra, 1, color), (10 + x, ALTO/1.5 + y))
             x += TAMANNO_LETRA
         y += TAMANNO_LETRA
+
+
 
 
 
