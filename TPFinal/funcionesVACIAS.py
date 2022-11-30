@@ -1,7 +1,6 @@
 from principal import *
 from configuracion import *
 import random
-import math
 
 archivo = open("lemario.txt","r")
 
@@ -11,6 +10,14 @@ def nuevaPalabra(lista):
 
 def lectura(archivo, salida, largo):
     largoReal = largo + 1
+    for linea in archivo.readlines():
+        if len(linea) == largoReal:
+            salida.append(linea)
+    return salida
+
+def lecturaAleatoria(archivo, salida):
+    limiteSuperior = random.randint(2, 8)
+    largoReal = limiteSuperior + 1
     for linea in archivo.readlines():
         if len(linea) == largoReal:
             salida.append(linea)
