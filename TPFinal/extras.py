@@ -72,9 +72,9 @@ defaultFontGrande = pygame.font.Font(pygame.font.get_default_font(), TAMANNO_LET
 defaultFontCasiGrande = pygame.font.Font(pygame.font.get_default_font(), TAMANNO_LETRA_CASI_GRANDE)
 defaultFontMediana = pygame.font.Font(pygame.font.get_default_font(), TAMANNO_LETRA_MEDIANA)
 
+#muestra la pantalla con la que arranca el juego, para elegir las modalidades
 def pantallaInicial(screen):
     pygame.draw.line(screen, (255,255,255), (0, ALTO-70) , (ANCHO, ALTO-70), 5)
-    #muestra lo que escribe el jugador
     screen.blit(defaultFontMediana.render("Indique que modalidad quiere jugar", 1, COLOR_TEXTO), (20, 50))
     screen.blit(defaultFont.render("a - Por tiempo -> Tenés que adivinar la palabra lo antes posible", 1, COLOR_TEXTO), (40, 120))
     screen.blit(defaultFont.render("b - Por aciertos -> Tenés que adivinar la mayor cantidad de palabras", 1, COLOR_TEXTO), (40, 180))
@@ -119,6 +119,7 @@ def dibujar(screen, listaDePalabrasUsuario, palabraUsuario, puntos, segundos, ga
             x += TAMANNO_LETRA
         y += TAMANNO_LETRA
         
+    #muestra las letras correctas, incorrectas y casi correctas
     a = 0
     b = 0
     c = 0
